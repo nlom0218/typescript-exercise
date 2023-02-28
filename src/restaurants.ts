@@ -11,7 +11,15 @@ type Restaurant = {
 class Restaurants {
   #restaurants: Restaurant[] = [];
 
-  add(newRestaurant: Restaurant): void {}
+  add(newRestaurant: Restaurant): void {
+    this.#restaurants.push(newRestaurant);
+  }
 
-  filterByCategory(category: Category): Restaurant[] {}
+  filterByCategory(category: Category): Restaurant[] {
+    return this.#restaurants.filter(
+      (restaurant) => restaurant.category === category
+    );
+  }
 }
+
+export default Restaurants;
